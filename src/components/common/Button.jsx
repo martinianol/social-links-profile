@@ -1,8 +1,28 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 
 const Button = ({ address, children }) => {
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        document.activeElement?.blur(); // Remove focus when "Esc" is pressed
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
   return (
-    <ButtonStyled href={address} target="_blank">
+    <ButtonStyled
+      href={address}
+      target="_blank"
+      tabindex="0"
+      rel="noopener noreferrer"
+    >
       {children}
     </ButtonStyled>
   );
@@ -24,7 +44,12 @@ const ButtonStyled = styled.a`
   padding: 12px;
   transition: background-color 500ms ease-in-out;
 
-  &:hover {
+  &:focus {
+    outline: none;
+  }
+
+  &:hover,
+  &:focus-visible {
     background-color: #c4f82a;
     color: #333;
     cursor: url("/black-hand-cursor.cur") 16 16, pointer;
