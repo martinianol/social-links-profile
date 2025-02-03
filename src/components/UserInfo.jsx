@@ -4,7 +4,7 @@ import avatarImage from "../assets/images/avatar-jessica.jpeg";
 const UserInfo = () => {
   return (
     <Container>
-      <Avatar src={avatarImage} />
+      <Avatar src={avatarImage} alt="user-info-img" />
       <NameAndLocation>
         <Name>Jessica Randall</Name>
         <Location>London, United Kingdom</Location>
@@ -35,12 +35,14 @@ const NameAndLocation = styled.div`
   gap: 4px;
 `;
 
-const Name = styled.p`
+const Name = styled.h1`
   font-size: 24px;
+  font-weight: 600;
 `;
 
 const Location = styled.p`
   font-size: 14px;
+  font-weight: bold;
   color: #c4f82a;
 `;
 
