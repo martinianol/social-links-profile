@@ -25,4 +25,8 @@ const Main = styled.main`
   overflow: scroll;
   width: 100%;
   max-width: 384px;
+
+  @media (min-width: 600px) {
+    padding: 40px;
+  }
 `;

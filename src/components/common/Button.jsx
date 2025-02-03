@@ -19,6 +19,7 @@ const ButtonStyled = styled.button`
 
   &:hover {
     background-color: #c4f82a;
+    color: #333;
     cursor: url("/black-hand-cursor.cur") 16 16, pointer;
   }
 `;
