@@ -12,9 +12,13 @@ const ButtonStyled = styled.button`
   width: 100%;
   border: none;
   border-radius: 8px;
-  line-height: 150%;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 12px;
+  transition: background-color 500ms ease-in-out;
 
   &:hover {
     background-color: #c4f82a;
+    cursor: url("/black-hand-cursor.cur") 16 16, pointer;
   }
 `;

@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import UserInfo from "../components/UserInfo";
-import SocialLinks from "../components/SocialLinks";
+import UserInfo from "./UserInfo";
+import SocialLinks from "./SocialLinks";
 
-const Home = () => {
+const Card = () => {
   return (
     <Main>
       <UserInfo />
@@ -11,7 +11,7 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Card;
 
 const Main = styled.main`
   background-color: #1f1f1f;
@@ -20,7 +20,9 @@ const Main = styled.main`
   align-items: center;
   color: #fff;
   border-radius: 12px;
-  padding: 40px;
+  padding: 24px;
   gap: 24px;
-  line-height: 150%;
+  overflow: scroll;
+  width: 100%;
+  max-width: 384px;
 `;

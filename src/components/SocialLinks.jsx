@@ -12,7 +12,9 @@ const SocialLinks = () => {
   return (
     <Container>
       {SOCIAL_LINKS.map((link) => (
-        <Button key={link}>{link}</Button>
+        <li key={link}>
+          <Button>{link}</Button>
+        </li>
       ))}
     </Container>
   );
@@ -20,9 +22,10 @@ const SocialLinks = () => {
 
 export default SocialLinks;
 
-const Container = styled.section`
+const Container = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
+  list-style: none;
 `;
