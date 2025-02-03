@@ -1,19 +1,19 @@
 import styled from "styled-components";
 import Button from "./common/Button";
 const SOCIAL_LINKS = [
-  "GitHub",
-  "Frontend Mentor",
-  "LinkedIn",
-  "Twitter",
-  "Instagram",
+  { name: "GitHub", address: "https://github.com/", id: 1 },
+  { name: "Frontend Mentor", address: "https://www.frontendmentor.io", id: 2 },
+  { name: "LinkedIn", address: "https://www.linkedin.com/", id: 3 },
+  { name: "Twitter", address: "https://x.com/", id: 4 },
+  { name: "Instagram", address: "https://www.instagram.com/", id: 5 },
 ];
 
 const SocialLinks = () => {
   return (
     <Container>
       {SOCIAL_LINKS.map((link) => (
-        <li key={link}>
-          <Button>{link}</Button>
+        <li key={link.id}>
+          <Button address={link.address}>{link.name}</Button>
         </li>
       ))}
     </Container>

@@ -1,14 +1,21 @@
 import styled from "styled-components";
 
-const Button = ({ children }) => {
-  return <ButtonStyled>{children}</ButtonStyled>;
+const Button = ({ address, children }) => {
+  return (
+    <ButtonStyled href={address} target="_blank">
+      {children}
+    </ButtonStyled>
+  );
 };
 
 export default Button;
 
-const ButtonStyled = styled.button`
+const ButtonStyled = styled.a`
+  text-decoration: none;
   color: #fff;
   background-color: #333;
+  display: block;
+  text-align: center;
   width: 100%;
   border: none;
   border-radius: 8px;
