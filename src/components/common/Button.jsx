@@ -17,12 +17,7 @@ const Button = ({ address, children }) => {
   }, []);
 
   return (
-    <ButtonStyled
-      href={address}
-      target="_blank"
-      tabindex="0"
-      rel="noopener noreferrer"
-    >
+    <ButtonStyled href={address} target="_blank" tabindex="0" rel="noreferrer">
       {children}
     </ButtonStyled>
   );
