@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import styled from "styled-components";
+import blackHandCursor from "../../assets/images/black-hand-cursor.cur";
 
 const Button = ({ address, children }) => {
   useEffect(() => {
@@ -17,7 +18,13 @@ const Button = ({ address, children }) => {
   }, []);
 
   return (
-    <ButtonStyled href={address} target="_blank" tabindex="0" rel="noreferrer">
+    <ButtonStyled
+      href={address}
+      target="_blank"
+      tabindex="0"
+      rel="noreferrer"
+      cursor={blackHandCursor}
+    >
       {children}
     </ButtonStyled>
   );
@@ -47,6 +54,7 @@ const ButtonStyled = styled.a`
   &:focus-visible {
     background-color: #c4f82a;
     color: #333;
-    cursor: url("/black-hand-cursor.cur") 16 16, pointer;
+    cursor: ${({ cursor }) =>
+      cursor ? `url(${cursor}) 16 16, pointer` : "pointer"};
   }
 `;
